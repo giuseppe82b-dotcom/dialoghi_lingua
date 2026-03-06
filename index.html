@@ -26,6 +26,7 @@
             min-height: 100vh;
             transition: background-color 0.5s ease;
             background-color: var(--bg-setup);
+            overflow-x: hidden;
         }
 
         /* SCHERMATA INIZIALE */
@@ -191,6 +192,49 @@
         .btn-close { background: var(--secondary); margin-top: 10px; }
 
         .feedback { margin-top: 10px; font-weight: bold; height: 30px; }
+
+        /* SCHERMATA FINALE */
+        #final-screen {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #2ecc71;
+            z-index: 100;
+            color: white;
+        }
+
+        .congrats-text {
+            font-size: 3rem;
+            font-weight: bold;
+            animation: bounce 1s infinite;
+            margin-bottom: 20px;
+            padding: 0 20px;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #f1c40f;
+            animation: fall 3s linear infinite;
+            border-radius: 50%;
+        }
+
+        @keyframes fall {
+            to { transform: translateY(100vh) rotate(360deg); }
+        }
     </style>
 </head>
 <body>
@@ -226,7 +270,7 @@
   "extra": ["apple", "red"]
  }
 ]</pre>
-            <p><small><i>Assicurati che non ci siano errori di virgole o virgolette nel file.</i></small></p>
+            <p><small><i>Assicurati che non ci siano errori di virgole o virgolette.</i></small></p>
             <button class="btn btn-close" onclick="toggleGuide(false)">Chiudi</button>
         </div>
     </div>
@@ -240,6 +284,11 @@
             <div id="word-bank" class="word-bank"></div>
             <button class="btn" onclick="checkSentence()">Verifica</button>
         </div>
+    </div>
+
+    <div id="final-screen">
+        <div class="congrats-text">Complimenti!<br>Hai concluso l'esercitazione 🏆</div>
+        <button class="btn" onclick="location.reload()" style="background: white; color: #2ecc71;">Ricomincia</button>
     </div>
 
     <script>
@@ -296,10 +345,29 @@
                 setTimeout(() => {
                     currentIndex++;
                     if (currentIndex < dialoghi.length) loadStep();
-                    else { alert("Bravo! Fine lezione."); location.reload(); }
+                    else showFinalScreen();
                 }, 1500);
             } else {
                 fb.style.color = "#ff7675"; fb.innerText = "I don't understand...";
+            }
+        }
+
+        function showFinalScreen() {
+            document.getElementById('game-screen').style.display = 'none';
+            const final = document.getElementById('final-screen');
+            final.style.display = 'flex';
+            document.body.style.backgroundColor = "#2ecc71";
+            createConfetti();
+        }
+
+        function createConfetti() {
+            for(let i=0; i<100; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.animationDelay = Math.random() * 2 + 's';
+                confetti.style.backgroundColor = ['#f1c40f', '#e67e22', '#e74c3c', '#9b59b6', '#3498db'][Math.floor(Math.random() * 5)];
+                document.body.appendChild(confetti);
             }
         }
     </script>
