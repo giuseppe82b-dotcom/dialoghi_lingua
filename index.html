@@ -14,6 +14,7 @@
             --bubble: #ffffff;
             --accent: #f72585;
             --correct: #55efc4;
+            --secondary: #636e72;
         }
 
         body {
@@ -48,13 +49,12 @@
             text-align: center;
             max-width: 400px;
             width: 90%;
-            position: relative;
         }
 
-        /* GUIDA A SCOMPARSA */
+        /* GUIDA E DOWNLOAD */
         .guide-link {
             display: inline-block;
-            margin-top: 15px;
+            margin-top: 20px;
             color: var(--bg-setup);
             text-decoration: underline;
             cursor: pointer;
@@ -69,7 +69,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.8);
+            background: rgba(0,0,0,0.85);
             z-index: 20;
             justify-content: center;
             align-items: center;
@@ -79,9 +79,9 @@
             background: white;
             padding: 30px;
             border-radius: 20px;
-            max-width: 500px;
+            max-width: 550px;
             width: 90%;
-            max-height: 80vh;
+            max-height: 85vh;
             overflow-y: auto;
             text-align: left;
             color: var(--text-dark);
@@ -89,10 +89,32 @@
 
         pre {
             background: #f4f4f4;
-            padding: 10px;
+            padding: 15px;
             border-radius: 8px;
             font-size: 0.85rem;
             overflow-x: auto;
+            border: 1px solid #ddd;
+        }
+
+        .download-box {
+            background: #e1f5fe;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #03a9f4;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .btn-download {
+            background: #03a9f4;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.8rem;
         }
 
         /* SCHERMATA DI GIOCO */
@@ -113,40 +135,27 @@
             align-items: center;
         }
 
-        .character-area {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 40px 0;
-        }
-
         .avatar {
-            width: 120px;
-            height: 120px;
+            width: 110px;
+            height: 110px;
             background-color: var(--char-circle);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: bold;
-            font-size: 1.1rem;
             color: white;
-            border: 6px solid rgba(255,255,255,0.2);
-            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
-            text-align: center;
-            padding: 10px;
+            border: 5px solid rgba(255,255,255,0.2);
         }
 
         .bubble {
             background: var(--bubble);
             color: var(--text-dark);
             padding: 20px 30px;
-            border-radius: 25px;
+            border-radius: 20px;
             position: relative;
             margin-top: 25px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-            font-size: 1.3rem;
-            max-width: 80%;
+            font-size: 1.2rem;
             text-align: center;
         }
 
@@ -156,115 +165,77 @@
             top: -15px;
             left: 50%;
             transform: translateX(-50%);
-            border-left: 15px solid transparent;
-            border-right: 15px solid transparent;
+            border-left: 15px solid transparent; border-right: 15px solid transparent;
             border-bottom: 15px solid var(--bubble);
         }
 
         .word-bank, .drop-zone {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 12px;
-            padding: 25px;
-            background: rgba(255,255,255,0.15);
-            border-radius: 20px;
-            min-height: 60px;
-            width: 100%;
-            margin-top: 20px;
-            border: 2px dashed rgba(255,255,255,0.3);
-            box-sizing: border-box;
+            display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
+            padding: 20px; background: rgba(255,255,255,0.15);
+            border-radius: 15px; min-height: 50px; width: 100%;
+            margin-top: 15px; border: 2px dashed rgba(255,255,255,0.3);
         }
 
         .word {
-            background: white;
-            color: var(--bg-game);
-            padding: 10px 20px;
-            border-radius: 12px;
-            cursor: pointer;
-            font-weight: bold;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: all 0.2s;
+            background: white; color: var(--bg-game);
+            padding: 10px 18px; border-radius: 10px;
+            cursor: pointer; font-weight: bold;
         }
 
         .btn {
-            background: var(--accent);
-            color: white;
-            border: none;
-            padding: 15px 40px;
-            border-radius: 50px;
-            cursor: pointer;
-            font-size: 1.1rem;
-            font-weight: bold;
-            margin-top: 20px;
-            text-transform: uppercase;
+            background: var(--accent); color: white; border: none;
+            padding: 15px 35px; border-radius: 50px;
+            cursor: pointer; font-weight: bold; margin-top: 20px;
         }
 
-        .btn-close {
-            background: #636e72;
-            padding: 10px 20px;
-            font-size: 0.9rem;
-        }
+        .btn-close { background: var(--secondary); margin-top: 10px; }
 
-        .feedback {
-            margin-top: 15px;
-            font-weight: bold;
-            height: 30px;
-            font-size: 1.2rem;
-        }
+        .feedback { margin-top: 10px; font-weight: bold; height: 30px; }
     </style>
 </head>
 <body>
 
     <div id="setup-screen">
         <div class="upload-card">
-            <h1 style="color: var(--bg-setup); margin-top: 0;">Didactic App 📚</h1>
-            <p style="color: #636e72;">Carica il tuo file JSON per iniziare.</p>
+            <h1 style="color: var(--bg-setup); margin-top: 0;">English Lab 📚</h1>
+            <p style="color: #636e72;">Carica il tuo file JSON per giocare.</p>
             <input type="file" id="jsonFile" accept=".json"><br>
-            <button class="btn" onclick="startGame()">Carica Dialoghi</button>
+            <button class="btn" onclick="startGame()">Avvia Lezione</button>
             <br>
-            <span class="guide-link" onclick="toggleGuide(true)">Visualizza GUIDA</span>
+            <span class="guide-link" onclick="toggleGuide(true)">Visualizza GUIDA e ESEMPIO</span>
         </div>
     </div>
 
     <div id="guide-overlay">
         <div class="guide-content">
-            <h2>Guida per il Docente 🍎</h2>
-            <p>Per creare una lezione, salva un file con estensione <b>.json</b> seguendo questa struttura:</p>
-            <ul>
-                <li><b>personaggio</b>: Il nome di chi parla.</li>
-                <li><b>italiano</b>: La frase mostrata nel fumetto.</li>
-                <li><b>inglese</b>: La traduzione corretta (parola per parola).</li>
-                <li><b>extra</b>: Parole sbagliate per confondere lo studente.</li>
-            </ul>
-            <p><b>Esempio di codice:</b></p>
+            <h2 style="margin-top: 0;">Guida al Formato 📝</h2>
+            <p>I dialoghi devono essere scritti in un file <b>.json</b>.</p>
+            
+            <div class="download-box">
+                <span>Scarica un file pronto all'uso:</span>
+                <a href="dialogo.json" download="dialogo.json" class="btn-download">Download dialogo.json</a>
+            </div>
+
+            <p><b>Esempio di struttura corretta:</b></p>
             <pre>
 [
  {
-  "personaggio": "Anna",
-  "italiano": "Ciao, come stai?",
-  "inglese": "Hi how are you",
+  "personaggio": "Teacher",
+  "italiano": "Buongiorno classe!",
+  "inglese": "Good morning class",
   "extra": ["apple", "red"]
- },
- {
-  "personaggio": "Marco",
-  "italiano": "Bene grazie!",
-  "inglese": "Fine thank you",
-  "extra": ["blue", "cat"]
  }
 ]</pre>
-            <button class="btn btn-close" onclick="toggleGuide(false)">Chiudi Guida</button>
+            <p><small><i>Assicurati che non ci siano errori di virgole o virgolette nel file.</i></small></p>
+            <button class="btn btn-close" onclick="toggleGuide(false)">Chiudi</button>
         </div>
     </div>
 
     <div id="game-screen">
         <div class="game-container">
-            <div class="character-area">
-                <div id="char-name" class="avatar">Nome</div>
-                <div id="it-phrase" class="bubble">...</div>
-            </div>
+            <div id="char-name" class="avatar">?</div>
+            <div id="it-phrase" class="bubble">...</div>
             <div id="feedback-msg" class="feedback"></div>
-            <p style="font-weight: bold; margin-bottom: 5px;">Traduci in inglese:</p>
             <div id="drop-zone" class="drop-zone"></div>
             <div id="word-bank" class="word-bank"></div>
             <button class="btn" onclick="checkSentence()">Verifica</button>
@@ -281,22 +252,17 @@
 
         function startGame() {
             const fileInput = document.getElementById('jsonFile');
-            if (fileInput.files.length === 0) {
-                alert("Per favore, seleziona un file JSON.");
-                return;
-            }
+            if (fileInput.files.length === 0) return alert("Seleziona un file!");
 
             const reader = new FileReader();
-            reader.onload = function(e) {
+            reader.onload = (e) => {
                 try {
                     dialoghi = JSON.parse(e.target.result);
                     document.getElementById('setup-screen').style.display = 'none';
                     document.getElementById('game-screen').style.display = 'block';
                     document.body.style.backgroundColor = "var(--bg-game)";
                     loadStep();
-                } catch (err) {
-                    alert("Errore nel formato del file JSON. Controlla la sintassi.");
-                }
+                } catch (err) { alert("Errore nel file JSON."); }
             };
             reader.readAsText(fileInput.files[0]);
         }
@@ -308,55 +274,32 @@
             document.getElementById('feedback-msg').innerText = "";
             document.getElementById('drop-zone').innerHTML = "";
             
-            let words = [...data.inglese.split(" "), ...data.extra];
-            for (let i = words.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [words[i], words[j]] = [words[j], words[i]];
-            }
-
+            let words = [...data.inglese.split(" "), ...data.extra].sort(() => Math.random() - 0.5);
             const bank = document.getElementById('word-bank');
             bank.innerHTML = "";
             words.forEach(w => {
-                const span = document.createElement('span');
-                span.className = 'word';
-                span.innerText = w;
-                span.onclick = () => moveWord(span);
-                bank.appendChild(span);
+                const el = document.createElement('span');
+                el.className = 'word';
+                el.innerText = w;
+                el.onclick = () => (el.parentElement.id === 'word-bank' ? document.getElementById('drop-zone') : bank).appendChild(el);
+                bank.appendChild(el);
             });
         }
 
-        function moveWord(el) {
-            const dropZone = document.getElementById('drop-zone');
-            const bank = document.getElementById('word-bank');
-            if (el.parentElement.id === 'word-bank') {
-                dropZone.appendChild(el);
-            } else {
-                bank.appendChild(el);
-            }
-        }
-
         function checkSentence() {
-            const userWords = Array.from(document.getElementById('drop-zone').children)
-                                   .map(el => el.innerText)
-                                   .join(" ");
-            const correctSentence = dialoghi[currentIndex].inglese;
-            const feedback = document.getElementById('feedback-msg');
+            const user = Array.from(document.getElementById('drop-zone').children).map(e => e.innerText).join(" ");
+            const target = dialoghi[currentIndex].inglese;
+            const fb = document.getElementById('feedback-msg');
 
-            if (userWords === correctSentence) {
-                feedback.style.color = "#55efc4";
-                feedback.innerText = "Excellent! ✨";
+            if (user === target) {
+                fb.style.color = "#55efc4"; fb.innerText = "Correct! ✨";
                 setTimeout(() => {
                     currentIndex++;
-                    if (currentIndex < dialoghi.length) {
-                        loadStep();
-                    } else {
-                        alert("Lezione completata con successo!");
-                        location.reload();
-                    }
+                    if (currentIndex < dialoghi.length) loadStep();
+                    else { alert("Bravo! Fine lezione."); location.reload(); }
                 }, 1500);
             } else {
-                feedback.style.color = "#ff7675";
-                feedback.innerText = "Sorry, I don't understand...";
+                fb.style.color = "#ff7675"; fb.innerText = "I don't understand...";
             }
         }
     </script>
