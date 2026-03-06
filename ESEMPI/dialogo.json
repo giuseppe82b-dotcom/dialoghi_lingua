@@ -1,0 +1,124 @@
+[
+  {
+    "personaggio": "Leo",
+    "italiano": "Ciao! Io sono Leo.",
+    "inglese": "Hi! I am Leo.",
+    "extra": ["Apple", "Red", "She"]
+  },
+  {
+    "personaggio": "Maya",
+    "italiano": "Ciao Leo! Il mio nome è Maya.",
+    "inglese": "Hello Leo! My name is Maya.",
+    "extra": ["Your", "Is", "Green"]
+  },
+  {
+    "personaggio": "Leo",
+    "italiano": "Io sono italiano. Tu di dove sei?",
+    "inglese": "I am Italian. Where are you from?",
+    "extra": ["He", "Pizza", "Blue"]
+  },
+  {
+    "personaggio": "Maya",
+    "italiano": "Io sono inglese. Dove vivi?",
+    "inglese": "I am English. Where do you live?",
+    "extra": ["What", "Cat", "My"]
+  },
+  {
+    "personaggio": "Leo",
+    "italiano": "Io vivo a Roma. E tu?",
+    "inglese": "I live in Rome. And you?",
+    "extra": ["He", "From", "Yellow"]
+  },
+  {
+    "personaggio": "Maya",
+    "italiano": "Il nome di mia madre è Elena. Come si chiama tua madre?",
+    "inglese": "My mother's name is Elena. What is your mother's name?",
+    "extra": ["His", "Father", "Live"]
+  },
+  {
+    "personaggio": "Leo",
+    "italiano": "Sua madre si chiama Sara. Suo padre si chiama Paolo.",
+    "inglese": "Her mother's name is Sara. His father's name is Paolo.",
+    "extra": ["Our", "Blue", "Am"]
+  },
+  {
+    "personaggio": "Maya",
+    "italiano": "Qual è il tuo colore preferito?",
+    "inglese": "What is your favourite colour?",
+    "extra": ["Who", "Name", "In"]
+  },
+  {
+    "personaggio": "Leo",
+    "italiano": "Il mio colore preferito è il blu. Il tuo?",
+    "inglese": "My favourite colour is blue. Yours?",
+    "extra": ["Red", "Is", "She"]
+  },
+  {
+    "personaggio": "Maya",
+    "italiano": "Il mio è il rosso. Arrivederci Leo!",
+    "inglese": "Mine is red. Goodbye Leo!",
+    "extra": ["He", "Live", "Yellow"]
+  },
+
+  {
+    "personaggio": "Maya",
+    "italiano": "Sei stanco? Io non sono stanca.",
+    "inglese": "Are you tired? I am not tired.",
+    "extra": ["Is", "Happy", "Have"]
+  },
+  {
+    "personaggio": "Leo",
+    "italiano": "Sì, io sono stanco. Non sono un supereroe!",
+    "inglese": "Yes, I am tired. I am not a superhero!",
+    "extra": ["Are", "No", "He"]
+  },
+  {
+    "personaggio": "Maya",
+    "italiano": "Hai un cane? Io ho un gatto nero.",
+    "inglese": "Have you got a dog? I have got a black cat.",
+    "extra": ["Are", "Has", "Bird"]
+  },
+  {
+    "personaggio": "Leo",
+    "italiano": "No, non ho un cane. Ho un libro.",
+    "inglese": "No, I haven't got a dog. I have got a book.",
+    "extra": ["Hasn't", "Am", "Pen"]
+  },
+  {
+    "personaggio": "Maya",
+    "italiano": "Dov'è il tuo libro? È nello zaino?",
+    "inglese": "Where is your book? Is it in the backpack?",
+    "extra": ["Have", "Under", "Who"]
+  },
+  {
+    "personaggio": "Leo",
+    "italiano": "No, è sopra il tavolo, vicino alla penna.",
+    "inglese": "No, it is on the table, near the pen.",
+    "extra": ["Under", "Behind", "In"]
+  },
+  {
+    "personaggio": "Maya",
+    "italiano": "La mia penna è sotto la sedia, accanto allo zaino.",
+    "inglese": "My pen is under the chair, next to the backpack.",
+    "extra": ["On", "In", "Front"]
+  },
+  {
+    "personaggio": "Leo",
+    "italiano": "Scusa, dov'è la scuola? È lontana?",
+    "inglese": "Excuse me, where is the school? Is it far?",
+    "extra": ["How", "What", "Near"]
+  },
+  {
+    "personaggio": "Maya",
+    "italiano": "La scuola è di fronte al cinema, accanto all'ospedale.",
+    "inglese": "The school is in front of the cinema, next to the hospital.",
+    "extra": ["Under", "Behind", "On"]
+  },
+  {
+    "personaggio": "Leo",
+    "italiano": "Grazie! Sei molto gentile.",
+    "inglese": "Thank you! You are very kind.",
+    "extra": ["Have", "Is", "Small"]
+  }
+
+]
